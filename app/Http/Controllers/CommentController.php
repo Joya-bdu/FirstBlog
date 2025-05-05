@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Post;
@@ -72,4 +72,12 @@ class CommentController extends Controller
         // Redirect back to the post show page with a success message
         return redirect()->route('posts.show', $postId)->with('success', 'Comment deleted successfully!');
     }
+    /**
+ * Display the specified comment.
+ */
+public function show(Comment $comment)
+{
+    return view('comments.show', compact('comment'));
 }
+
+} 
